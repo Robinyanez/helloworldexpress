@@ -7,26 +7,18 @@ app.use(express.json());
 
 const port =  3000
 
-/**
- *  Aqui invocamos a las rutas
- */
-//TODO localhost/api/_______________
-
 dbConnect();
-
-//app.use("/api", require("./routes"))
 
 app.use('*', (req, res, next) => {
     if (!connected) {
-      return res.status(500).send("Couldn't stablish connection. Please, contact the admin");
+      return res.status(500).send("No se pudo establecer la conexión. Por favor, póngase en contacto con el administrador.");
     } else {
-        /* res.end('Connection DB stablished\n'); */
-        res.end('Connection Robin\n');
+        res.end('Conexion Establecida\n');
       return next();
     }
   });
 
 app.listen(port, () => {
-    console.log(`tu app esta lista por http://localhost:${port}`)
+    console.log(`app lista url http://localhost:${port}`)
 })
 

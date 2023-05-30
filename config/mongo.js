@@ -4,7 +4,7 @@ const dbConnect = () => {
     const DB_URI = 'mongodb://184.73.86.23:27017/admin';
     mongoose.connect(DB_URI,{
         user: "admin",
-        pass: "Passwd123",
+        pass: "Robyanez123",
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
